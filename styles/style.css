@@ -63,13 +63,92 @@ White: hsl(0, 0%, 100%)
 
 
 font-family: 'League Spartan', sans-serif;
+Weights: 400, 500, 700
 
 **************/
 
+/*************** containers ************/
 body {
   font-size: 15px;
   font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  background-image: url(../images/bg-pattern-top-mobile.svg);
+  background-repeat: no-repeat;
 }
 #container {
   min-width: 23.4375rem;
+  padding: 1.5rem;
+  margin-top: 2em;
+}
+/********** header ***********/
+
+header h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: hsl(300, 43%, 22%);
+  margin: 1.5rem;
+}
+header p {
+  font-size: 1.2em;
+  color: hsl(303, 10%, 53%);
+  line-height: 1.4;
+}
+/**************** rating *************/
+
+.rating {
+  margin: 3em 0em;
+}
+.stars {
+  background-color: hsl(300, 24%, 96%);
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-bottom: 1rem;
+}
+.stars ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.8em;
+}
+li {
+  margin-right: 0.5em;
+}
+.stars p {
+  color: hsl(300, 43%, 22%);
+  font-weight: 700;
+}
+/*************** review *************/
+
+.comments {
+  background-color: hsl(300, 43%, 22%);
+  border-radius: 0.5em;
+  padding: 2.666em 2.2em;
+  margin-bottom: 1em;
+}
+.buyer {
+  display: flex;
+  margin-bottom: 1.5em;
+}
+.buyer img {
+  width: 2.666em;
+  border-radius: 50%;
+  margin-right: 1.5em;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+h3 {
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+}
+.verified {
+  color: hsl(333, 80%, 67%, 0.7);
+}
+.comments > p {
+  text-align: start;
+  font-size: 1em;
+  line-height: 1.4;
+  color: hsl(0, 0%, 100%, 0.8);
 }
