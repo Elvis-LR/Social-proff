@@ -73,8 +73,10 @@ body {
   font-family: "League Spartan", sans-serif;
   font-weight: 400;
   text-align: center;
-  background-image: url(../images/bg-pattern-top-mobile.svg);
-  background-repeat: no-repeat;
+  background-image: url(../images/bg-pattern-top-mobile.svg),
+    url(../images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
 }
 #container {
   min-width: 23.4375rem;
@@ -83,7 +85,7 @@ body {
 }
 /********** header ***********/
 
-header h1 {
+h1 {
   font-size: 2.5em;
   font-weight: 700;
   color: hsl(300, 43%, 22%);
@@ -105,7 +107,7 @@ header p {
   border-radius: 0.5em;
   margin-bottom: 1rem;
 }
-.stars ul {
+ul {
   display: flex;
   justify-content: center;
   margin-bottom: 0.8em;
@@ -151,4 +153,97 @@ h3 {
   font-size: 1em;
   line-height: 1.4;
   color: hsl(0, 0%, 100%, 0.8);
+}
+
+/************* tablet*************/
+
+@media screen and (min-width: 50rem) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "header rating"
+      "review review";
+    column-gap: 5em;
+  }
+  header {
+    display: grid;
+    grid-area: header;
+    place-content: center;
+  }
+  .rating {
+    grid-area: rating;
+  }
+  .reviews {
+    grid-area: review;
+  }
+}
+
+/************** desktop **************/
+
+@media screen and (min-width: 73.333em) {
+  body {
+    background-image: url(../images/bg-pattern-top-desktop.svg),
+      url(../images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    font-size: 1.2rem;
+  }
+  #container {
+    max-width: 73.333em;
+  }
+  header {
+    text-align: start;
+    max-width: 28.333em;
+  }
+  h1 {
+    font-size: 4em;
+    margin: 0rem;
+    margin-bottom: 1rem;
+  }
+
+  /***** rating ****/
+  .rating {
+    display: flex;
+    flex-direction: column;
+  }
+  .stars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 29em;
+  }
+  ul {
+    margin: 0em;
+    margin-right: 1.5em;
+  }
+  .stars:nth-child(1) {
+    align-self: start;
+  }
+  .stars:nth-child(2) {
+    align-self: center;
+  }
+  .stars:nth-child(3) {
+    align-self: end;
+  }
+  /*********** comments ***********/
+
+  .reviews {
+    display: flex;
+    gap: 2rem;
+    min-height: 19.333em;
+    margin-top: 5em;
+  }
+  .comments:nth-child(1) {
+    align-self: start;
+  }
+  .comments:nth-child(2) {
+    align-self: center;
+  }
+  .comments:nth-child(3) {
+    align-self: end;
+  }
 }
